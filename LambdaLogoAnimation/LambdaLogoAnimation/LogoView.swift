@@ -30,13 +30,26 @@ class LogoView: UIView {
     override func draw(_ rect: CGRect) {
         // Drawing code
         if let context = UIGraphicsGetCurrentContext() {
+            
             context.addLines(between: [CGPoint(x: 20, y: 200),
                                        CGPoint(x: rect.maxX - 20, y: 200),
                                        CGPoint(x: rect.maxX - 20, y: 500),
                                        CGPoint(x: 207, y: 650),
                                        CGPoint(x: 20, y: 500),
                                        CGPoint(x: 20, y: 200)])
+            
             context.setFillColor(logoRedColor.cgColor)
+            context.fillPath()
+            
+            context.addLines(between: [CGPoint(x: rect.width / 2, y: 350),
+                                       CGPoint(x: (rect.width / 2) + 30, y: 425),
+                                       CGPoint(x: (rect.width / 2) + 60, y: 425),
+                                       CGPoint(x: (rect.width / 2) + 15, y: 325),
+                                       CGPoint(x: (rect.width / 2) - 15, y: 325),
+                                       CGPoint(x: (rect.width / 2) - 60, y: 425),
+                                       CGPoint(x: (rect.width / 2) - 30, y: 425),
+                                       CGPoint(x: rect.width / 2, y: 350)])
+            context.setFillColor(lambdaSymbolColor.cgColor)
             context.fillPath()
         }
         
